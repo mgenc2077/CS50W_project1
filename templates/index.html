@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    <div class="container" style="text-align: center;">
+        Kitapçım'a Hoş geldiniz
+    </div>
+{% endblock %}
+
+{% block body %}
+<div class="container" style="text-align: center;">
+    <h4>İstediğiniz kutuya tam metni yazıp yanındaki ara tuşuna basabilirsiniz.</h4><br>
+    <form action="{{ url_for('form') }}" method="POST">
+        <input type="text" name="isbn" placeholder="isbn numarasını giriniz">
+        <button class="btn btn-primary">Ara</button>
+    </form>
+    <br>
+    <form action="{{ url_for('form') }}" method="POST">
+        <input type="text" name="title" placeholder="Kitap adını giriniz">
+        <button class="btn btn-primary">Ara</button>
+    </form>
+    <br>
+    <form action="{{ url_for('form') }}" method="POST">
+        <input type="text" name="author" placeholder="Kitabın Yazarını giriniz">
+        <button class="btn btn-primary">Ara</button>
+    </form>
+</div>
+{% endblock %}

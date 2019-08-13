@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <head>
+        <title>Kitapçım</title>
+    </head>
+    <body>
+        <div class="row justify-content-between">
+            <a href="/" class="col-4">Kitapçım.com (Anasayfa)</a><br>
+            <div style="text-align: right;" class="col-4">
+                {% if g.user %}
+                Hoşgeldin {{ g.user }}
+                <a href="/logout">Çıkış yap</a>
+                {% else %}
+                <a href="/giris">Giriş yap</a>
+                <a href="/kayit">Kayıt ol</a>
+                {% endif %}
+            </div>
+        </div>
+        <h1>{% block heading %}{% endblock %}</h1>
+        
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

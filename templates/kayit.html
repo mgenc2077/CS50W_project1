@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    <div class="container"style="text-align: center;">
+        Kitapçım.com Kayıt
+    </div>
+{% endblock %}
+
+{% block body %}
+<div class="container" style="text-align: center;">
+    <form action="{{ url_for('success') }}" method="POST">
+        <input type="text" name="email" placeholder="Email"><br>
+        <br>
+        <input type="password" name="password" placeholder="Şifre"><br>
+        <br>
+        <button class="btn btn-primary">Kayıt ol</button>
+    </form>
+</div>
+{% endblock %}

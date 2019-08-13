@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    <div style="text-align: center;">
+            Kitapçım {{ test }}
+    </div>
+{% endblock %}
+
+
+{% block body %}
+    <div class="container" style="text-align: center;">
+    <table class="table table-dark">
+            <tbody>
+                <tr>
+                    <td>isbn numarası</td>
+                    <td>{{ anlik.isbn }}{{ ad.isbn }}{{ yazar.isbn }}</td>
+                </tr>
+                <tr>
+                    <td>Kitabın adı</td>
+                    <td>{{ anlik.title }}{{ ad.title }}{{ yazar.title }}</td>
+                </tr>
+                <tr>
+                    <td>Kitabın yazarı</td>
+                    <td>{{ anlik.author }}{{ ad.author }}{{ yazar.author }}</td>
+                </tr>
+                <tr>
+                    <td>Kitabın yayım yılı</td>
+                    <td>{{ anlik.year }}{{ ad.year }}{{ yazar.year }}</td>
+                </tr>
+                <tr>
+                    <td>Goodreads inceleme sayisi</td>
+                    <td>{{ work_ratings_count }}</td>
+                </tr>
+                <tr>
+                    <td>Goodreads ortalama puan</td>
+                    <td>{{ average_rating }}/5</td>
+                </tr>
+            </tbody>
+    </table>
+        <div class="container">
+            <div class="row justify-content-center">
+                <form action="{{ url_for('ratext') }}" method="POST">
+                    <select class="custom-select mr-sm-2" name="deger">
+                        <option selected>Değerlendirme</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <input type="text" name="inc" placeholder="inceleme yazabilirsiniz" class="col-4">
+                    <button class="btn btn-primary">gönder</button>
+                </form>
+            </div>
+            <div class="row justify-content-center">
+            <table class="table table-dark">
+                <th>
+                    <tr>
+                        <td>5 üzerinden</td>
+                        <td>yorum</td>
+                    </tr>
+                </th>
+                {% for item in data %}
+                <tr>
+                    <td>{{ item[0] }}</td>
+                    <td>{{ item[1] }}</td>
+                    {% endfor %}
+                </tr>
+            </table>
+            </div>
+        </div>
+{% endblock %}

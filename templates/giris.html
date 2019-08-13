@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    <div class="container"style="text-align: center;">
+        Kitapçım.com Giriş
+    </div>
+{% endblock %}
+
+{% block body %}
+<div class="container" style="text-align: center;">
+    <form action="{{ url_for('login') }}" method="POST">
+        <div class="form-group">
+            <label for="eid">Email address</label>
+            <input type="text" class="form-control" name="eid" placeholder="email">
+        </div>
+        <div class="form-group">
+            <label for="epass">Password</label>
+            <input type="password" class="form-control" name="epass" placeholder="şifre">
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
