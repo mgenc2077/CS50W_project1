@@ -3,7 +3,7 @@
 Bu projede html,css,flask ve bootstrap kullanarak bir kitap arama motoru oluşturdum.
 Bu proje Edx platformu üzerinden almış olduğum cs50 web development serisinin lecture 3'den sonraki project1'dir(https://docs.cs50.net/web/2019/x/projects/1/project1.html).
 
-requirements.txt = projenin çalışması için gereki python kütüphaneleri ('pip install requiments.txt' yazıp kurulabilir)
+requirements.txt = projenin çalışması için gereki python kütüphaneleri ('pip install -r requiments.txt' yazıp kurulabilir)
 
 books.csv = ilk aşamada kullandığım veri tabanı
 
